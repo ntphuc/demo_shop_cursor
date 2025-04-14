@@ -1,0 +1,134 @@
+# Cursor Rules
+
+## Instructions
+
+- Record fixes for mistakes or corrections to avoid repetition in the `Lessons` section.
+- Organize thoughts and plan steps before starting a task in the `Scratchpad` section.
+- Clear old tasks if necessary.
+- Use todo markers for progress tracking:
+  - `[X]` Completed tasks
+  - `[ ]` Pending tasks
+- Update Scratchpad after completing subtasks.
+- Reflect and plan after milestones for better task management.
+- Always refer to Scratchpad before planning the next step.
+
+## Lessons
+
+1. Use `npx shadcn@latest add [component]` instead of `npx shadcn-ui@latest add [component]` when installing Shadcn UI components.
+2. In Next.js 14+, page props params must be typed as a Promise. Example:
+   ```typescript
+   type tParams = Promise<{ id: string }>
+   interface PageProps {
+     params: tParams
+   }
+   ```
+   Then await the params in the component:
+   ```typescript
+   export default async function Page(props: PageProps) {
+     const { id } = await props.params
+   }
+   ```
+3. Use `const session = await auth()` instead of `const session = await getServerSession(authOptions)` for Next.js authentication. The new `auth()` function is the recommended way to get the session in Next.js Auth v5.
+4. When importing `useRouter` from 'next/navigation', the component must be marked as a client component using the `'use client'` directive at the top of the file, as this hook only works on the client side.
+
+## Scratchpad
+
+### E-commerce Website Development Plan
+
+#### Phase 1: Project Setup and Configuration
+[X] Initialize Next.js 15 project with TypeScript
+[X] Set up ESLint and Prettier
+[X] Configure Tailwind CSS
+[X] Install and configured dependences
+    - Shadcn UI components
+    - Lucide icons
+    - Zod for validation
+    - Zustand for state management
+    - Recharts for analytics
+    - Resend for emails
+    - Uploadthing for file uploads
+    - Prisma ORM
+    - PostgreSQL database
+    - NextAuth.js beta for authentication
+    - Stripe for payments
+
+[X] Set up project structure and folder organization
+[ ] Configure environment variables
+
+#### Phase 2: Database and Authentication
+[ ] Set up PostgreSQL database
+[ ] Configure Prisma ORM
+[ ] Create initial database schema
+[ ] Set up NextAuth.js v5 (beta)
+[ ] Implement authentication flows (signup, login, password reset)
+[ ] Create user roles and permissions system
+
+#### Phase 3: Core Features Development
+[ ] Implement product management system
+[ ] Create category and subcategory structure
+[ ] Develop shopping cart functionality
+[ ] Implement wishlist feature
+[ ] Create product search and filtering
+[ ] Develop product reviews and ratings
+
+#### Phase 4: Admin Dashboard
+[ ] Create admin layout and navigation
+[ ] Implement product CRUD operations
+[ ] Develop order management system
+[ ] Create user management interface
+[ ] Implement analytics dashboard with Recharts
+[ ] Set up email notifications with Resend
+
+#### Phase 5: Payment Integration
+[ ] Set up Stripe integration
+[ ] Implement checkout process
+[ ] Create order confirmation system
+[ ] Develop payment status tracking
+[ ] Implement refund processing
+[ ] Set up webhook handlers
+
+#### Phase 6: Media Management
+[ ] Configure Uploadthing for file uploads
+[ ] Implement image optimization
+[ ] Create media library management
+[ ] Develop product image gallery
+[ ] Set up video upload and playback
+
+#### Phase 7: State Management and API
+[ ] Set up Zustand for global state
+[ ] Create API routes and handlers
+[ ] Implement data validation with Zod
+[ ] Develop caching strategies
+[ ] Create API documentation
+
+#### Phase 8: UI/UX Development
+[ ] Design and implement responsive layouts
+[ ] Create reusable components
+[ ] Implement dark/light mode
+[ ] Develop loading states and animations
+[ ] Create error handling and feedback
+[ ] Implement accessibility features
+
+#### Phase 9: Testing and Optimization
+[ ] Write unit tests
+[ ] Implement integration tests
+[ ] Perform performance optimization
+[ ] Conduct security audit
+[ ] Implement SEO best practices
+[ ] Set up monitoring and logging
+
+#### Phase 10: Deployment and CI/CD
+[ ] Set up production environment
+[ ] Configure CI/CD pipeline
+[ ] Implement backup strategies
+[ ] Set up monitoring and alerts
+[ ] Create deployment documentation
+[ ] Plan for scaling
+
+### Current Focus: Phase 1 - Project Setup
+[X] Initialize Next.js project
+[X] Install core dependencies
+[X] Set up development environment
+[X] Install and configure additional dependencies
+[X] Set up project structure
+[ ] Configure environment variables
